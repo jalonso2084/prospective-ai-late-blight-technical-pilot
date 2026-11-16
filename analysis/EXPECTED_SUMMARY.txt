@@ -1,0 +1,4 @@
+Exact ordinal agreement: 11/16 = 68.75%
+Within ±1 ordinal point: 16/16 = 100.00%
+Recognition absolute differences: [0.1, 0.03, 0.03, 0.15]
+Mean absolute difference: 0.0775 = 7.75 percentage points
