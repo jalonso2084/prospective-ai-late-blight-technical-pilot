@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Canonical Evaluation Output Schema v0.2 Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_status_labels",
+    "evaluation_id",
+    "version_family_id",
+    "document_version_id",
+    "ced_id",
+    "ced_sha256",
+    "protocol_version",
+    "rubric_version",
+    "prompt_version",
+    "evidence_language",
+    "response_language",
+    "model",
+    "current_paper_assessments",
+    "future_outcome_forecasts",
+    "concise_justification",
+    "limitations",
+    "output_compliance_status"
+  ],
+  "properties": {
+    "record_status_labels": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "TECHNICAL_PILOT_ONLY"},
+        {"const": "NOT_A_PROSPECTIVE_VALIDATION_RECORD"}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "evaluation_id": {"type": "string","minLength": 1},
+    "version_family_id": {"type": "string","minLength": 1},
+    "document_version_id": {"type": "string","minLength": 1},
+    "ced_id": {"type": "string","minLength": 1},
+    "ced_sha256": {"type": "string","pattern": "^[a-f0-9]{64}$"},
+    "protocol_version": {"const": "1.0"},
+    "rubric_version": {"const": "Pilot v0.2"},
+    "prompt_version": {"const": "v0.2"},
+    "evidence_language": {"type": "string","minLength": 1},
+    "response_language": {"const": "English"},
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider","model_identifier","model_version_or_snapshot","evaluation_timestamp_utc","provider_reported_knowledge_cutoff","knowledge_cutoff_source","interface","reasoning_mode","sampling_parameters","input_delivery_condition_id","provider_schema_adapter_version","browsing_state","tool_access"],
+      "properties": {
+        "provider": {"type": "string","minLength": 1},
+        "model_identifier": {"type": "string","minLength": 1},
+        "model_version_or_snapshot": {"type": ["string","null"]},
+        "evaluation_timestamp_utc": {"type": "string","format": "date-time"},
+        "provider_reported_knowledge_cutoff": {"type": ["string","null"]},
+        "knowledge_cutoff_source": {"enum": ["PROVIDER_DOCUMENTATION","PROVIDER_INTERFACE","NOT_REPORTED"]},
+        "interface": {"type": "string","minLength": 1},
+        "reasoning_mode": {"type": "string","minLength": 1},
+        "sampling_parameters": {"type": "object"},
+        "input_delivery_condition_id": {"type": "string","minLength": 1},
+        "provider_schema_adapter_version": {"type": "string","minLength": 1},
+        "browsing_state": {"const": "DISABLED"},
+        "tool_access": {"const": "NONE"}
+      }
+    },
+    "current_paper_assessments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scientific_quality","methodological_rigor","strength_of_evidence","perceived_novelty"],
+      "properties": {
+        "scientific_quality": {
+          "type": "object","additionalProperties": false,"required": ["assessment_status","score","rationale"],
+          "properties": {
+            "assessment_status": {"enum": ["ASSESSED","CANNOT_ASSESS"]},
+            "score": {"type": ["integer","null"],"enum": [1,2,3,4,null]},
+            "rationale": {"type": "string","minLength": 1}
+          }
+        },
+        "methodological_rigor": {
+          "type": "object","additionalProperties": false,"required": ["assessment_status","score","rationale"],
+          "properties": {
+            "assessment_status": {"enum": ["ASSESSED","CANNOT_ASSESS"]},
+            "score": {"type": ["integer","null"],"enum": [1,2,3,4,null]},
+            "rationale": {"type": "string","minLength": 1}
+          }
+        },
+        "strength_of_evidence": {
+          "type": "object","additionalProperties": false,"required": ["assessment_status","score","rationale"],
+          "properties": {
+            "assessment_status": {"enum": ["ASSESSED","CANNOT_ASSESS"]},
+            "score": {"type": ["integer","null"],"enum": [1,2,3,4,null]},
+            "rationale": {"type": "string","minLength": 1}
+          }
+        },
+        "perceived_novelty": {
+          "type": "object","additionalProperties": false,"required": ["assessment_status","score","rationale"],
+          "properties": {
+            "assessment_status": {"enum": ["ASSESSED","CANNOT_ASSESS"]},
+            "score": {"type": ["integer","null"],"enum": [1,2,3,4,null]},
+            "rationale": {"type": "string","minLength": 1}
+          }
+        }
+      }
+    },
+    "future_outcome_forecasts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scientific_recognition_36m","epidemiological_consequence_36m","operational_uptake_36m","translational_timing"],
+      "properties": {
+        "scientific_recognition_36m": {
+          "type": "object","additionalProperties": false,
+          "required": ["forecastability","probability","epistemic_uncertainty","supporting_evidence","main_uncertainty","ways_forecast_could_be_wrong"],
+          "properties": {
+            "forecastability": {"enum": ["FORECASTABLE","NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE","CONSTRUCT_AMBIGUOUS"]},
+            "probability": {"type": ["number","null"],"minimum": 0,"maximum": 1},
+            "epistemic_uncertainty": {"enum": ["LOW","MODERATE","HIGH"]},
+            "supporting_evidence": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 4},
+            "main_uncertainty": {"type": "string","minLength": 1},
+            "ways_forecast_could_be_wrong": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 4}
+          }
+        },
+        "epidemiological_consequence_36m": {
+          "type": "object","additionalProperties": false,
+          "required": ["forecastability","probability","epistemic_uncertainty","supporting_evidence","main_uncertainty","ways_forecast_could_be_wrong"],
+          "properties": {
+            "forecastability": {"enum": ["FORECASTABLE","NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE","CONSTRUCT_AMBIGUOUS"]},
+            "probability": {"type": ["number","null"],"minimum": 0,"maximum": 1},
+            "epistemic_uncertainty": {"enum": ["LOW","MODERATE","HIGH"]},
+            "supporting_evidence": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 4},
+            "main_uncertainty": {"type": "string","minLength": 1},
+            "ways_forecast_could_be_wrong": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 4}
+          }
+        },
+        "operational_uptake_36m": {
+          "type": "object","additionalProperties": false,
+          "required": ["forecastability","probability","epistemic_uncertainty","supporting_evidence","main_uncertainty","ways_forecast_could_be_wrong"],
+          "properties": {
+            "forecastability": {"enum": ["FORECASTABLE","NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE","CONSTRUCT_AMBIGUOUS"]},
+            "probability": {"type": ["number","null"],"minimum": 0,"maximum": 1},
+            "epistemic_uncertainty": {"enum": ["LOW","MODERATE","HIGH"]},
+            "supporting_evidence": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 4},
+            "main_uncertainty": {"type": "string","minLength": 1},
+            "ways_forecast_could_be_wrong": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 4}
+          }
+        },
+        "translational_timing": {
+          "type": "object","additionalProperties": false,"required": ["status","time_bin","rationale"],
+          "properties": {
+            "status": {"enum": ["FORECASTABLE","TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE"]},
+            "time_bin": {"type": ["string","null"],"enum": ["0–12 months","13–24 months","25–36 months",">36 months","NO_UPTAKE_EXPECTED_WITHIN_FORECASTABLE_HORIZON",null]},
+            "rationale": {"type": "string","minLength": 1}
+          }
+        }
+      }
+    },
+    "concise_justification": {
+      "type": "object","additionalProperties": false,
+      "required": ["paper_evidence","main_uncertainty","ways_forecast_could_be_wrong"],
+      "properties": {
+        "paper_evidence": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 5},
+        "main_uncertainty": {"type": "string","minLength": 1},
+        "ways_forecast_could_be_wrong": {"type": "array","items": {"type": "string","minLength": 1},"minItems": 1,"maxItems": 5}
+      }
+    },
+    "limitations": {"type": "array","items": {"type": "string","minLength": 1}},
+    "output_compliance_status": {"enum": ["MODEL_REPORTED_SCHEMA_COMPLIANT","MODEL_REPORTED_PARTIAL","MODEL_REPORTED_UNABLE_TO_COMPLY"]}
+  }
+}
