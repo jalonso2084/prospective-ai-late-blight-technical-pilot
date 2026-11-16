@@ -1,0 +1,8 @@
+evaluation_id,raw_file_in_package,normalized_json_in_package
+SP-VF038-P1,outputs/raw/SP-VF038-P1_RAW.md,outputs/normalized/SP-VF038-P1.json
+SP-VF038-R1,outputs/raw/SP-VF038-R1_RAW.txt,outputs/normalized/SP-VF038-R1.json
+SP-VF051-P1,outputs/raw/SP-VF051-P1_RAW.txt,outputs/normalized/SP-VF051-P1.json
+SP-VF051-R1,outputs/raw/SP-VF051-R1_RAW.txt,outputs/normalized/SP-VF051-R1.json
+SP-VF064-R1,outputs/raw/SP-VF064-R1_RAW.txt,outputs/normalized/SP-VF064-R1.json
+SP-VF073-R1,outputs/raw/SP-VF073-R1_RAW.txt,outputs/normalized/SP-VF073-R1.json
+SP-VF084-P1,outputs/raw/SP-VF084-P1_RAW.md,outputs/normalized/SP-VF084-P1.json
