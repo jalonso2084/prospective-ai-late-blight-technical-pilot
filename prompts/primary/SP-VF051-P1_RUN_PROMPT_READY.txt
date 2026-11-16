@@ -1,0 +1,759 @@
+TECHNICAL_PILOT_ONLY
+NOT_A_PROSPECTIVE_VALIDATION_RECORD
+
+AM-01 SINGLE-PROVIDER UI EXECUTION
+RUN TYPE: PRIMARY
+This is the primary run for this Version Family.
+
+You are evaluating one frozen technical-pilot evidence package in a fresh isolated ChatGPT conversation.
+
+STRICT EXECUTION CONDITION
+- Use only the files uploaded in this chat as scientific evidence.
+- Do not browse or search the web.
+- Do not use tools, connected apps, project files, memory, prior chats, or external sources.
+- Do not infer or mention later versions, publication history, citations, reception, adoption, or downstream outcomes.
+- If you recognize the work, ignore that recognition and evaluate only the supplied evidence.
+- Do not claim that prior internal model knowledge is absent.
+- Do not ask for additional scientific evidence.
+- Return only one JSON object. Do not wrap it in Markdown fences.
+- All free-text fields must be in English.
+- Do not provide hidden chain-of-thought; provide only concise evidence-linked rationale fields required by the rubric.
+
+RUN MANIFEST — USE THESE VALUES EXACTLY
+evaluation_id = "SP-VF051-P1"
+version_family_id = "VF051"
+document_version_id = "DV01"
+ced_id = "CED-VF051-DV01-v1.2"
+ced_sha256 = "dc8c240477af2e0558308e801c12f2d32670e57a88065c420bf4a7644c1f856f"
+protocol_version = "1.0"
+rubric_version = "Pilot v0.2"
+prompt_version = "v0.2"
+evidence_language = "English"
+response_language = "English"
+
+MODEL METADATA — USE THESE VALUES EXACTLY
+provider = "OpenAI"
+model_identifier = "GPT-5.6 Sol"
+model_version_or_snapshot = "NOT_EXPOSED_BY_UI"
+evaluation_timestamp_utc = "2026-11-13T01:54:04Z"
+provider_reported_knowledge_cutoff = null
+knowledge_cutoff_source = "NOT_REPORTED"
+interface = "ChatGPT UI"
+reasoning_mode = "High"
+sampling_parameters = {"ui_controlled": true, "temperature": null}
+input_delivery_condition_id = "AM01_UI_NATIVE_FILES_v1"
+provider_schema_adapter_version = "AM01_UI_CANONICAL_v1.0"
+browsing_state = "DISABLED"
+tool_access = "NONE"
+
+APPROVED SCIENTIFIC EVIDENCE
+Primary CED:
+- `VF051_CED_v1.2.pdf` — SHA-256 `dc8c240477af2e0558308e801c12f2d32670e57a88065c420bf4a7644c1f856f`
+
+Approved contemporaneous supplements:
+- none
+
+No other scientific evidence is approved.
+
+=== FROZEN SYSTEM-EQUIVALENT INSTRUCTIONS v0.2 ===
+TECHNICAL_PILOT_ONLY
+NOT_A_PROSPECTIVE_VALIDATION_RECORD
+
+You are participating in a technical pilot of a scientific-evaluation pipeline. Use only the supplied Controlled Evaluation Document and explicitly approved contemporaneous supplements. Do not browse, search, retrieve external information, use tools, consult project commentary, or consult other model outputs.
+
+Base every assessment and forecast only on information contained in the supplied evidence. Do not use or mention knowledge of later versions, subsequent publication history, citations, scientific reception, operational adoption, or downstream events, even if you recognize the work. Do not claim that the paper was absent from your prior internal model knowledge.
+
+Apply AI Scientific Evaluation Rubric — Pilot v0.2 exactly. Evidence may be in a non-English original publication language, but all free-text response fields must be returned in English. Return only the provider-adapter-compliant JSON object. Provide concise evidence-linked reasoning summaries; do not provide hidden chain-of-thought.
+
+=== FROZEN USER INSTRUCTIONS v0.2 ===
+Evaluate the supplied Controlled Evaluation Document under AI Scientific Evaluation Rubric — Pilot v0.2.
+
+Separate present-paper assessment from future-outcome forecasts. Treat forecast probabilities as forecasts, not calibrated truth. If an outcome construct cannot support a defensible numeric forecast from the supplied evidence, use the non-forecastable or construct-ambiguous state and return probability=null. Do not substitute 0 for an unavailable probability.
+
+Do not infer later publication history or downstream outcomes. Complete the identifiers supplied in the run manifest. Use English for all free-text output fields. Return only the provider-adapter-compliant JSON object.
+
+=== AI SCIENTIFIC EVALUATION RUBRIC — PILOT v0.2 FROZEN ===
+# AI Scientific Evaluation Rubric — Pilot v0.2 Candidate
+
+TECHNICAL_PILOT_ONLY  
+NOT_A_PROSPECTIVE_VALIDATION_RECORD
+
+Created: 2026-09-08T02:40:58Z
+
+Status: **FROZEN FOR STEP 3 TECHNICAL PILOT.** Frozen before any scientific model execution. This is not the final Step 4 preregistered rubric.
+
+## General response rules
+Use only the supplied Controlled Evaluation Document (CED) and explicitly approved contemporaneous supplements. Do not browse, search, retrieve external information, use tools, consult other model outputs, or use project commentary.
+
+Base every assessment and forecast only on information contained in the supplied evidence. **Do not use or mention knowledge of later versions, subsequent publication history, citations, reception, adoption, or downstream events, even if you recognize the work.** This instruction does not establish that prior internal model knowledge is absent.
+
+Evidence may be in the original publication language. All free-text output fields must be returned in **English**. Return concise evidence-linked reasoning summaries, not hidden chain-of-thought.
+
+## Part A — Present-paper assessment
+Each dimension uses `1–4` plus `CANNOT_ASSESS`. These scores characterize the supplied paper at evaluation time and are not forecasts of future impact.
+
+For machine output, each dimension returns:
+- `assessment_status = ASSESSED` with `score = 1|2|3|4`, or
+- `assessment_status = CANNOT_ASSESS` with `score = null`;
+- plus a concise English `rationale`.
+
+Verbal score labels are defined by this rubric and are **derived programmatically**, not independently generated by the model.
+
+### A1. Scientific quality
+Operational definition: overall coherence and credibility of the scientific contribution given its question, design, analysis, and claims.
+- 1 — Major scientific weaknesses substantially undermine the central claims.
+- 2 — Meaningful contribution is possible, but substantial weaknesses require strong caution.
+- 3 — Generally sound contribution with important but bounded limitations.
+- 4 — Strong, coherent contribution whose central claims are well supported for the study's scope.
+- CANNOT_ASSESS — supplied evidence is insufficient to judge.
+
+### A2. Methodological rigor
+Operational definition: appropriateness and execution of study design, controls/comparators, sampling, measurement, analysis, validation, and reporting relative to the research question.
+- 1 — Critical methodological deficiencies prevent reliable inference.
+- 2 — Several important design/analysis limitations materially constrain inference.
+- 3 — Methods are largely appropriate and competently executed, with identifiable limitations.
+- 4 — Methods are notably strong and well matched to the question, with robust validation/controls where applicable.
+- CANNOT_ASSESS.
+
+### A3. Strength of evidence
+Operational definition: how strongly the presented results support the paper's central conclusions, independent of novelty or likely future attention.
+- 1 — Evidence does not adequately support central conclusions.
+- 2 — Evidence partially supports conclusions but important inferential gaps remain.
+- 3 — Evidence supports most central conclusions with bounded uncertainty.
+- 4 — Multiple/convergent or otherwise strong lines of evidence support the central conclusions.
+- CANNOT_ASSESS.
+
+### A4. Perceived novelty
+Operational definition: degree to which the supplied paper appears to introduce new evidence, methods, mechanisms, datasets, or interpretations **based only on the paper's own scientific context and references**.
+- 1 — Predominantly incremental/confirmatory within the paper's stated context.
+- 2 — Some novel element, but central advance is limited or derivative.
+- 3 — Clear substantive novelty in evidence, method, mechanism, or interpretation.
+- 4 — Unusually distinctive advance that materially departs from prior approaches/findings described in the paper.
+- CANNOT_ASSESS.
+
+Explicit construct rules:
+
+**scientific quality ≠ future scientific recognition**  
+**novelty ≠ importance**
+
+## Part B — Future-outcome forecasts
+For each event return:
+- `forecastability`: `FORECASTABLE`, `NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE`, or `CONSTRUCT_AMBIGUOUS`;
+- `probability`: number 0.00–1.00 only when `FORECASTABLE`; otherwise `null`;
+- `epistemic_uncertainty`: `LOW`, `MODERATE`, or `HIGH`;
+- at least one concise item of `supporting_evidence` from the supplied evidence;
+- a non-empty `main_uncertainty`;
+- at least one item in `ways_forecast_could_be_wrong`.
+
+A numeric probability is a model forecast. It is **not** treated as calibrated merely because it is numeric.
+
+### B1. Scientific recognition — 36 months
+Event: by 36 months after scientific `t0`, at least one independent later scientific work substantively builds on, adopts, validates, challenges, or extends the contribution's central finding/method beyond a routine background citation.
+
+### B2. Epidemiological consequence — 36 months
+Event: by 36 months after `t0`, an independent scientific or technical source explicitly uses the contribution to materially alter characterization, interpretation, or assessment of potato late-blight pathogen populations, fungicide resistance, disease risk/spread, host–pathogen relationships, or forecasting-relevant epidemiology.
+
+If the contribution is too remote from this construct for a defensible numeric forecast, use `CONSTRUCT_AMBIGUOUS` or `NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE` rather than manufacturing a number.
+
+### B3. Operational uptake — 36 months
+Event: by 36 months after `t0`, an independent surveillance, forecasting, breeding, extension, fungicide-resistance-management, diagnostic, or field-management system/guideline explicitly incorporates the contribution's finding, method, tool, or recommendation.
+
+Potential practical usefulness now is not documented future uptake.
+
+### B4. Translational timing — exploratory
+This field is exploratory and may be removed or redesigned at Step 4.
+
+If operational uptake is forecastable and timing itself is methodologically defensible, return `status = FORECASTABLE` and one of:
+- `0–12 months`
+- `13–24 months`
+- `25–36 months`
+- `>36 months`
+- `NO_UPTAKE_EXPECTED_WITHIN_FORECASTABLE_HORIZON`
+
+Otherwise return:
+- `status = TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE`
+- `time_bin = null`
+
+The pilot will audit this field for forced pseudo-precision, unsupported timing claims, construct reinterpretation, and test–retest instability.
+
+## Construct-separation rules
+Do not treat:
+- quality as future recognition;
+- novelty as importance;
+- current epidemiological relevance as future epidemiological consequence;
+- potential usefulness as future operational uptake;
+- model uncertainty/confidence as forecast probability.
+
+=== CANONICAL EVALUATION OUTPUT SCHEMA v0.2 FROZEN ===
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Canonical Evaluation Output Schema v0.2 FROZEN FOR STEP 3 TECHNICAL PILOT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_status_labels",
+    "evaluation_id",
+    "version_family_id",
+    "document_version_id",
+    "ced_id",
+    "ced_sha256",
+    "protocol_version",
+    "rubric_version",
+    "prompt_version",
+    "evidence_language",
+    "response_language",
+    "model",
+    "current_paper_assessments",
+    "future_outcome_forecasts",
+    "concise_justification",
+    "limitations",
+    "output_compliance_status"
+  ],
+  "properties": {
+    "record_status_labels": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": "TECHNICAL_PILOT_ONLY"
+        },
+        {
+          "const": "NOT_A_PROSPECTIVE_VALIDATION_RECORD"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "evaluation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version_family_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ced_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ced_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protocol_version": {
+      "const": "1.0"
+    },
+    "rubric_version": {
+      "const": "Pilot v0.2"
+    },
+    "prompt_version": {
+      "const": "v0.2"
+    },
+    "evidence_language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "response_language": {
+      "const": "English"
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model_identifier",
+        "model_version_or_snapshot",
+        "evaluation_timestamp_utc",
+        "provider_reported_knowledge_cutoff",
+        "knowledge_cutoff_source",
+        "interface",
+        "reasoning_mode",
+        "sampling_parameters",
+        "input_delivery_condition_id",
+        "provider_schema_adapter_version",
+        "browsing_state",
+        "tool_access"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_version_or_snapshot": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evaluation_timestamp_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "provider_reported_knowledge_cutoff": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "knowledge_cutoff_source": {
+          "enum": [
+            "PROVIDER_DOCUMENTATION",
+            "PROVIDER_INTERFACE",
+            "NOT_REPORTED"
+          ]
+        },
+        "interface": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reasoning_mode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sampling_parameters": {
+          "type": "object"
+        },
+        "input_delivery_condition_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider_schema_adapter_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "browsing_state": {
+          "const": "DISABLED"
+        },
+        "tool_access": {
+          "const": "NONE"
+        }
+      }
+    },
+    "current_paper_assessments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scientific_quality",
+        "methodological_rigor",
+        "strength_of_evidence",
+        "perceived_novelty"
+      ],
+      "properties": {
+        "scientific_quality": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assessment_status",
+            "score",
+            "rationale"
+          ],
+          "properties": {
+            "assessment_status": {
+              "enum": [
+                "ASSESSED",
+                "CANNOT_ASSESS"
+              ]
+            },
+            "score": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                null
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "methodological_rigor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assessment_status",
+            "score",
+            "rationale"
+          ],
+          "properties": {
+            "assessment_status": {
+              "enum": [
+                "ASSESSED",
+                "CANNOT_ASSESS"
+              ]
+            },
+            "score": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                null
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "strength_of_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assessment_status",
+            "score",
+            "rationale"
+          ],
+          "properties": {
+            "assessment_status": {
+              "enum": [
+                "ASSESSED",
+                "CANNOT_ASSESS"
+              ]
+            },
+            "score": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                null
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "perceived_novelty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assessment_status",
+            "score",
+            "rationale"
+          ],
+          "properties": {
+            "assessment_status": {
+              "enum": [
+                "ASSESSED",
+                "CANNOT_ASSESS"
+              ]
+            },
+            "score": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                null
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "future_outcome_forecasts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scientific_recognition_36m",
+        "epidemiological_consequence_36m",
+        "operational_uptake_36m",
+        "translational_timing"
+      ],
+      "properties": {
+        "scientific_recognition_36m": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "forecastability",
+            "probability",
+            "epistemic_uncertainty",
+            "supporting_evidence",
+            "main_uncertainty",
+            "ways_forecast_could_be_wrong"
+          ],
+          "properties": {
+            "forecastability": {
+              "enum": [
+                "FORECASTABLE",
+                "NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE",
+                "CONSTRUCT_AMBIGUOUS"
+              ]
+            },
+            "probability": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "epistemic_uncertainty": {
+              "enum": [
+                "LOW",
+                "MODERATE",
+                "HIGH"
+              ]
+            },
+            "supporting_evidence": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "maxItems": 4
+            },
+            "main_uncertainty": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ways_forecast_could_be_wrong": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "maxItems": 4
+            }
+          }
+        },
+        "epidemiological_consequence_36m": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "forecastability",
+            "probability",
+            "epistemic_uncertainty",
+            "supporting_evidence",
+            "main_uncertainty",
+            "ways_forecast_could_be_wrong"
+          ],
+          "properties": {
+            "forecastability": {
+              "enum": [
+                "FORECASTABLE",
+                "NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE",
+                "CONSTRUCT_AMBIGUOUS"
+              ]
+            },
+            "probability": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "epistemic_uncertainty": {
+              "enum": [
+                "LOW",
+                "MODERATE",
+                "HIGH"
+              ]
+            },
+            "supporting_evidence": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "maxItems": 4
+            },
+            "main_uncertainty": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ways_forecast_could_be_wrong": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "maxItems": 4
+            }
+          }
+        },
+        "operational_uptake_36m": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "forecastability",
+            "probability",
+            "epistemic_uncertainty",
+            "supporting_evidence",
+            "main_uncertainty",
+            "ways_forecast_could_be_wrong"
+          ],
+          "properties": {
+            "forecastability": {
+              "enum": [
+                "FORECASTABLE",
+                "NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE",
+                "CONSTRUCT_AMBIGUOUS"
+              ]
+            },
+            "probability": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "epistemic_uncertainty": {
+              "enum": [
+                "LOW",
+                "MODERATE",
+                "HIGH"
+              ]
+            },
+            "supporting_evidence": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "maxItems": 4
+            },
+            "main_uncertainty": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ways_forecast_could_be_wrong": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "maxItems": 4
+            }
+          }
+        },
+        "translational_timing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "time_bin",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "FORECASTABLE",
+                "TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE"
+              ]
+            },
+            "time_bin": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "0–12 months",
+                "13–24 months",
+                "25–36 months",
+                ">36 months",
+                "NO_UPTAKE_EXPECTED_WITHIN_FORECASTABLE_HORIZON",
+                null
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "concise_justification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "paper_evidence",
+        "main_uncertainty",
+        "ways_forecast_could_be_wrong"
+      ],
+      "properties": {
+        "paper_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "maxItems": 5
+        },
+        "main_uncertainty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ways_forecast_could_be_wrong": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "maxItems": 5
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "output_compliance_status": {
+      "enum": [
+        "MODEL_REPORTED_SCHEMA_COMPLIANT",
+        "MODEL_REPORTED_PARTIAL",
+        "MODEL_REPORTED_UNABLE_TO_COMPLY"
+      ]
+    }
+  }
+}
+
+FINAL OUTPUT REQUIREMENT
+Return exactly one JSON object that satisfies the canonical schema and the semantic rules in the rubric. Use the run-manifest and model-metadata values above exactly. Do not add fields. Do not add prose before or after the JSON.
