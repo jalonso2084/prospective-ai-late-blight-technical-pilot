@@ -1,0 +1,5 @@
+version_family_id,attempt_label,classification,reason,disposition,timestamp_utc_if_preserved
+VF051,primary preliminary,WRONG_MODEL,GPT-6 used instead of frozen GPT-5.6 Sol,Excluded; later valid Work run retained as SP-VF051-P1,
+VF058,primary attempt 1,PLATFORM_SAFETY_BLOCK_AND_FOLLOWUP,Safety block followed by an interactive user message,Excluded under AM-03; one clean retry permitted and later valid,
+VF084,primary attempt 1,PRIMARY_CED_NOT_DELIVERED,Main CED was not successfully delivered,Excluded; rerun from fresh conversation after correcting file delivery,
+VF084,primary attempt 2,PLATFORM_SAFETY_BLOCK,Complete evidence package triggered a platform safety block,Excluded; clean retry under AM-03 later succeeded,
