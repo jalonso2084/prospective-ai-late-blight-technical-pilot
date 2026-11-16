@@ -1,0 +1,8 @@
+evaluation_id,raw_source,normalization
+SP-VF051-P1,Pasted text(5).txt,parsed as JSON; whitespace normalized only
+SP-VF038-R1,Pasted text(6).txt,parsed as JSON; whitespace normalized only
+SP-VF051-R1,Pasted text(7).txt,parsed as JSON; whitespace normalized only
+SP-VF064-R1,Pasted text(8).txt,parsed as JSON; whitespace normalized only
+SP-VF073-R1,Pasted text(9).txt,parsed as JSON; whitespace normalized only
+SP-VF038-P1,Pasted markdown(2).md,appended one final closing brace to copied text; original chat response was reported to contain it
+SP-VF084-P1,Pasted markdown(3).md,extracted the first fenced JSON object; trailing validation/tool text excluded from normalized copy
