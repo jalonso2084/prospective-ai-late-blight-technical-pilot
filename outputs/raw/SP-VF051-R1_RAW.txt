@@ -1,0 +1,143 @@
+{
+  "record_status_labels": [
+    "TECHNICAL_PILOT_ONLY",
+    "NOT_A_PROSPECTIVE_VALIDATION_RECORD"
+  ],
+  "evaluation_id": "SP-VF051-R1",
+  "version_family_id": "VF051",
+  "document_version_id": "DV01",
+  "ced_id": "CED-VF051-DV01-v1.2",
+  "ced_sha256": "dc8c240477af2e0558308e801c12f2d32670e57a88065c420bf4a7644c1f856f",
+  "protocol_version": "1.0",
+  "rubric_version": "Pilot v0.2",
+  "prompt_version": "v0.2",
+  "evidence_language": "English",
+  "response_language": "English",
+  "model": {
+    "provider": "OpenAI",
+    "model_identifier": "GPT-5.6 Sol",
+    "model_version_or_snapshot": "NOT_EXPOSED_BY_UI",
+    "evaluation_timestamp_utc": "2026-11-15T00:12:24Z",
+    "provider_reported_knowledge_cutoff": null,
+    "knowledge_cutoff_source": "NOT_REPORTED",
+    "interface": "ChatGPT UI",
+    "reasoning_mode": "High",
+    "sampling_parameters": {
+      "ui_controlled": true,
+      "temperature": null
+    },
+    "input_delivery_condition_id": "AM01_UI_NATIVE_FILES_v1",
+    "provider_schema_adapter_version": "AM01_UI_CANONICAL_v1.0",
+    "browsing_state": "DISABLED",
+    "tool_access": "NONE"
+  },
+  "current_paper_assessments": {
+    "scientific_quality": {
+      "assessment_status": "ASSESSED",
+      "score": 2,
+      "rationale": "The paper addresses an important potato late-blight research problem and presents an integrated temporal transcriptomics framework with biologically plausible candidate genes. However, the central claims of reliable pathogenicity-gene discovery substantially exceed the demonstrated evidence. The study relies on a small biological dataset, computational associations, and incompletely specified validation procedures. The distinction between host defense-associated expression and causal pathogenicity is insufficiently maintained."
+    },
+    "methodological_rigor": {
+      "assessment_status": "ASSESSED",
+      "score": 1,
+      "rationale": "Critical methodological uncertainties undermine reliable inference. The 18-sample transcriptomic dataset is reconstructed into gene-level learning instances, but the reported splitting procedure does not establish biological-sample independence or demonstrate protection against correlated observations and information leakage. Infection markers are described as model inputs despite infection status being the classification target. Normalization across all conditions before partitioning raises additional leakage concerns. The attention-ranking equations also require clarification: averaging normalized attention weights across all attended entities would ordinarily yield a constant rather than a discriminative gene score. Cross-validation, parameter selection, and independent testing are insufficiently specified to resolve these concerns."
+    },
+    "strength_of_evidence": {
+      "assessment_status": "ASSESSED",
+      "score": 2,
+      "rationale": "Table 1 reports an accuracy of 0.85 and AUC-ROC of 0.92 for the hybrid model, compared with 0.70 accuracy for the Transformer ablation. The 200 prioritized genes include established defense-related families, and the paper reports enrichment, temporal clustering, and literature-based functional support. These results support exploratory candidate prioritization but do not establish reliable generalization or causal gene functions. The cross-species rice experiment offers additional computational evidence, although it does not independently validate potato candidate genes. No wet-lab functional confirmation is presented."
+    },
+    "perceived_novelty": {
+      "assessment_status": "ASSESSED",
+      "score": 2,
+      "rationale": "The combination of LSTM temporal encoding, Transformer attention, stability-adjusted gene ranking, and potato infection transcriptomics provides a potentially useful application-specific synthesis. However, the principal components are established methodological approaches within the paper's own framing, and the evidence does not demonstrate that their combination constitutes a substantially new computational principle. Candidate-gene discovery offers exploratory novelty, but biological validation of the approximately 110 reportedly previously unannotated candidates is lacking."
+    }
+  },
+  "future_outcome_forecasts": {
+    "scientific_recognition_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.25,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The study proposes an integrated LSTM-Transformer approach for identifying genes associated with potato late-blight responses.",
+        "Table 1 reports improved classification accuracy relative to the tested conventional models and Transformer ablation.",
+        "The paper provides a prioritized set of 200 candidate genes and reports approximately 110 without previous potato disease annotations.",
+        "The methodological and validation limitations may restrict independent confidence in the findings."
+      ],
+      "main_uncertainty": "Whether independent researchers will consider the methodological contribution and candidate-gene results sufficiently reproducible and biologically credible to substantively validate, challenge, extend, or adopt them within 36 months.",
+      "ways_forecast_could_be_wrong": [
+        "Independent investigators could rapidly reproduce and extend the candidate-gene results, producing greater scientific recognition than forecast.",
+        "Methodological weaknesses could prevent substantive independent engagement entirely.",
+        "The framework could attract substantial methodological scrutiny or critical replication even without successful biological validation."
+      ]
+    },
+    "epidemiological_consequence_36m": {
+      "forecastability": "NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE",
+      "probability": null,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The investigation characterizes host transcriptional responses to Phytophthora infestans infection rather than pathogen populations, disease spread, or field epidemiology.",
+        "The candidate genes include immune receptors, hormone-response regulators, transporters, and cell-wall-associated proteins that could inform host-pathogen relationship research.",
+        "No epidemiological validation, population-level characterization, field-risk model, or disease-forecasting application is demonstrated."
+      ],
+      "main_uncertainty": "The supplied evidence provides no defensible basis for estimating whether independent research will use these molecular findings to materially revise epidemiologically relevant characterization or assessment within 36 months.",
+      "ways_forecast_could_be_wrong": [
+        "Independent functional studies could establish host-pathogen mechanisms with substantial implications for epidemiological interpretation.",
+        "The prioritized genes could subsequently be integrated into studies of host resistance and infection dynamics.",
+        "The computational candidate associations could fail independent validation and yield no epidemiological consequence."
+      ]
+    },
+    "operational_uptake_36m": {
+      "forecastability": "NOT_FORECASTABLE_FROM_SUPPLIED_EVIDENCE",
+      "probability": null,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "Section 4.3 proposes potential applications in genetic engineering, marker-assisted selection, and early diagnostic markers.",
+        "Section 4.5 explicitly states that the study prioritizes genes computationally rather than experimentally validating them.",
+        "No validated breeding markers, deployable diagnostic assay, operational implementation, or documented institutional integration is presented."
+      ],
+      "main_uncertainty": "Operational adoption would depend on independent functional validation, reproducibility, technical development, and practical integration, none of which is sufficiently documented to support a defensible 36-month probability.",
+      "ways_forecast_could_be_wrong": [
+        "A breeding or diagnostic program could independently validate and incorporate selected candidate genes sooner than anticipated.",
+        "The computational framework could be incorporated into a technical research workflow without requiring immediate field deployment.",
+        "Failure of candidate validation or model reproducibility could prevent operational adoption."
+      ]
+    },
+    "translational_timing": {
+      "status": "TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE",
+      "time_bin": null,
+      "rationale": "The paper presents exploratory computational candidate prioritization without demonstrated functional validation, implementation milestones, or documented adoption pathways. Since operational uptake cannot be forecast defensibly from the supplied evidence, assigning a translational time interval would introduce unsupported precision."
+    }
+  },
+  "concise_justification": {
+    "paper_evidence": [
+      "Section 2.1 reports transcriptomic analysis involving 32,917 genes and 18 biological samples across three infection time points.",
+      "Sections 2.2 and 2.4 describe an LSTM-Transformer architecture, gene-level instance reconstruction, hybrid attention, cross-validation, and attention-based gene prioritization.",
+      "Table 1 reports 0.85 accuracy and 0.92 AUC-ROC for the proposed model, exceeding the reported comparator results.",
+      "Sections 3.2.1-3.2.5 report 200 prioritized genes, seven functional categories, five temporal expression clusters, and biological annotation evidence.",
+      "Sections 4.5-4.6 acknowledge the absence of experimental functional validation and the limited temporal resolution of the dataset."
+    ],
+    "main_uncertainty": "The central uncertainty concerns whether the reported predictive performance and gene rankings reflect reproducible biological signals rather than correlated training instances, possible target leakage, or inadequately validated attention-based feature attribution. These uncertainties also limit predictions of downstream scientific recognition and practical consequences.",
+    "ways_forecast_could_be_wrong": [
+      "A properly independent biological-sample evaluation could confirm the reported performance and strengthen the scientific contribution.",
+      "Additional analysis could demonstrate that the input features and validation design prevent leakage despite their incomplete description.",
+      "Experimental perturbation studies could confirm causal disease-related functions for high-ranking candidate genes.",
+      "Independent replication could reveal weaker predictive performance or limited biological specificity.",
+      "The work could stimulate substantive methodological critique or independent extension despite its current limitations."
+    ]
+  },
+  "limitations": [
+    "Only the supplied Controlled Evaluation Document was considered as scientific evidence; no independent verification of the reported experiments was performed.",
+    "The effective number of independent biological observations is small despite the large number of gene-level instances.",
+    "The training, validation, and testing partitions are not described sufficiently to establish independence at the biological-sample level.",
+    "The description of infection markers as input features creates uncertainty about potential target leakage.",
+    "The attention aggregation and stability-adjustment formulas contain ambiguities that limit confidence in the claimed interpretability of gene rankings.",
+    "The paper reports biological plausibility and annotation-based support but no direct experimental validation of candidate-gene functions.",
+    "The reported cross-species classification results do not constitute independent functional confirmation of potato pathogenicity-related genes.",
+    "The statistical comparison between model accuracies is insufficiently documented to independently assess its significance.",
+    "The manuscript does not provide sufficient evidence to establish operational readiness, epidemiological impact, or translational timing.",
+    "The numerical scientific-recognition probability is a subjective, high-uncertainty forecast rather than an empirically calibrated estimate.",
+    "Model identity and execution metadata are reproduced from the supplied run manifest and have not been independently verified."
+  ],
+  "output_compliance_status": "MODEL_REPORTED_SCHEMA_COMPLIANT"
+}
