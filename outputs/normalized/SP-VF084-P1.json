@@ -1,0 +1,128 @@
+{
+  "record_status_labels": [
+    "TECHNICAL_PILOT_ONLY",
+    "NOT_A_PROSPECTIVE_VALIDATION_RECORD"
+  ],
+  "evaluation_id": "SP-VF084-P1",
+  "version_family_id": "VF084",
+  "document_version_id": "DV01",
+  "ced_id": "CED-VF084-DV01-v1.0",
+  "ced_sha256": "1eb556e473b903c51c74f9f7ad0fc2a2b89e02335fbbb4ed85e7a302b12c68c0",
+  "protocol_version": "1.0",
+  "rubric_version": "Pilot v0.2",
+  "prompt_version": "v0.2",
+  "evidence_language": "English",
+  "response_language": "English",
+  "model": {
+    "provider": "OpenAI",
+    "model_identifier": "GPT-5.6 Sol",
+    "model_version_or_snapshot": "NOT_EXPOSED_BY_UI",
+    "evaluation_timestamp_utc": "2026-11-14T21:45:11Z",
+    "provider_reported_knowledge_cutoff": null,
+    "knowledge_cutoff_source": "NOT_REPORTED",
+    "interface": "ChatGPT UI",
+    "reasoning_mode": "High",
+    "sampling_parameters": {
+      "ui_controlled": true,
+      "temperature": null
+    },
+    "input_delivery_condition_id": "AM01_UI_NATIVE_FILES_v1",
+    "provider_schema_adapter_version": "AM01_UI_CANONICAL_v1.0",
+    "browsing_state": "DISABLED",
+    "tool_access": "NONE"
+  },
+  "current_paper_assessments": {
+    "scientific_quality": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "The study asks a coherent translational question and uses targeted dsRNAs, untreated, water, and non-specific-dsRNA controls with and without P. infestans inoculation. The main microbiome findings are internally coherent, but the broad safety/target-specificity conclusion extends beyond a short controlled phyllosphere experiment. fileciteturn0file1L64-L76 fileciteturn0file1L21-L28"
+    },
+    "methodological_rigor": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "The design includes multiple comparators, repeated sampling times, amplicon sequencing, alpha- and beta-diversity analyses, PERMANOVA, ANCOM-BC with q<0.05, and compositionality-aware network inference. However, only three biological replicates were collected per treatment, which constrains power for treatment-level inference, especially for null effects. fileciteturn0file1L64-L76 fileciteturn0file1L153-L173"
+    },
+    "strength_of_evidence": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "Several analyses converge on limited effects of dsRNA spraying relative to larger pathogen-associated bacterial shifts, while fungal diversity and composition remain comparatively stable. The evidence is nevertheless bounded by small treatment-level replication and by the inability to make robust oomycete inferences from the recovered taxa. fileciteturn0file1L161-L178 fileciteturn0file1L214-L223"
+    },
+    "perceived_novelty": {
+      "assessment_status": "ASSESSED",
+      "score": 2,
+      "rationale": "The paper provides new evidence for potato and P. infestans, but it explicitly builds on a closely related prior study of dsRNA effects on cereal phyllosphere microbiota. The central advance is therefore a useful host-pathogen-system extension rather than a distinctly new analytical or mechanistic approach. fileciteturn0file1L63-L75"
+    }
+  },
+  "future_outcome_forecasts": {
+    "scientific_recognition_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.68,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The paper addresses an explicitly underexplored translational question: whether SIGS-associated dsRNA spraying perturbs the potato phyllosphere microbiome. fileciteturn0file1L15-L28",
+        "It extends prior related phyllosphere work to a different crop and an oomycete pathogen, creating a clear basis for independent replication or extension. fileciteturn0file1L63-L75"
+      ],
+      "main_uncertainty": "The supplied evidence does not establish how broadly the scientific community will prioritize this specific microbiome-safety question relative to other SIGS research directions.",
+      "ways_forecast_could_be_wrong": [
+        "The work could prompt rapid independent validation across cultivars, pathogens, or field settings, making recognition more likely than forecast.",
+        "The contribution could remain a narrow system-specific extension and receive little substantive follow-up despite its practical framing."
+      ]
+    },
+    "epidemiological_consequence_36m": {
+      "forecastability": "CONSTRUCT_AMBIGUOUS",
+      "probability": null,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "P. infestans inoculation was associated with larger bacterial community changes than dsRNA spraying, so the paper contains host-pathogen-microbiome observations but not direct pathogen-population or disease-risk surveillance evidence. fileciteturn0file1L189-L195",
+        "Oomycete reads were dominated by very few taxa, and the authors state that the recovered taxonomic breadth was too low for robust inference. fileciteturn0file1L220-L223"
+      ],
+      "main_uncertainty": "It is unclear whether later use of these microbiome findings would qualify as materially altering the rubric's epidemiological or host-pathogen characterization construct rather than remaining a crop-microbiome safety result.",
+      "ways_forecast_could_be_wrong": [
+        "Follow-up work could establish a causal microbiome-mediated effect on P. infestans infection or disease dynamics, making the contribution epidemiologically consequential.",
+        "A narrow interpretation of the construct could exclude this contribution entirely because it does not characterize pathogen populations, resistance, spread, or forecasting."
+      ]
+    },
+    "operational_uptake_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.18,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The study is explicitly motivated by the need to understand microbiome effects before SIGS can move from laboratory work toward practical large-scale use. fileciteturn0file1L15-L20",
+        "The experiment is a controlled pot study with one potato cultivar, short sampling windows, and three biological replicates per treatment, limiting direct transfer into field-management guidance. fileciteturn0file1L64-L76"
+      ],
+      "main_uncertainty": "Operational systems would require evidence that the microbiome findings generalize under field conditions and across relevant cultivars, environments, and application regimes.",
+      "ways_forecast_could_be_wrong": [
+        "Regulatory, extension, or management guidance could adopt the microbiome-safety evidence sooner if it is combined with independent field efficacy and safety studies.",
+        "Operational uptake could remain absent because the study provides no deployable surveillance, diagnostic, forecasting, resistance-management, or field-management tool."
+      ]
+    },
+    "translational_timing": {
+      "status": "TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE",
+      "time_bin": null,
+      "rationale": "The supplied evidence supports only a low-probability operational-uptake forecast and provides no defensible basis for assigning a specific adoption time bin."
+    }
+  },
+  "concise_justification": {
+    "paper_evidence": [
+      "The experiment compared two P. infestans-targeting dsRNAs with untreated, water, and non-specific-dsRNA controls and sampled inoculated and non-inoculated potato leaves at defined time points. fileciteturn0file1L64-L76",
+      "Bacterial beta-diversity showed substantial overlap among control and dsRNA treatments, and pairwise treatment differences were not significant at individual sampling times. fileciteturn0file1L161-L173",
+      "Differential-abundance results indicated stronger shifts associated with P. infestans inoculation than with dsRNA spraying alone. fileciteturn0file1L189-L201",
+      "Fungal communities showed no clear treatment clustering or appreciable individual-time-point differences, whereas oomycete taxonomic recovery was too limited for robust inference. fileciteturn0file1L214-L223"
+    ],
+    "main_uncertainty": "The central uncertainty is how well short-term, single-cultivar, controlled-pot microbiome responses generalize to field-scale SIGS use and to broader ecological safety claims.",
+    "ways_forecast_could_be_wrong": [
+      "Field studies could reproduce the limited microbiome disruption across diverse genotypes and environments, strengthening both the present inference and translational prospects.",
+      "Longer follow-up or larger experiments could reveal delayed or context-dependent microbiome effects that the current sampling design misses.",
+      "Independent research could show that the observed bacterial shifts have functional consequences for disease suppression or susceptibility, increasing scientific and operational relevance.",
+      "Conversely, the observed changes could prove biologically minor or system-specific, limiting substantive follow-up."
+    ]
+  },
+  "limitations": [
+    "Only three biological replicates were collected per treatment, limiting power for treatment-level comparisons and especially for conclusions based on absence of detectable differences.",
+    "The study uses one potato cultivar in controlled conditions and samples over 24–72 hours, so field generalizability and longer-term microbiome responses are not established.",
+    "The oomycete dataset contained too little taxonomic diversity for robust community-level inference.",
+    "Network analyses are descriptive of inferred co-occurrence structure and do not establish causal microbial interactions.",
+    "The study evaluates microbiome composition and diversity rather than comprehensive ecological safety or field-scale disease-control performance, so broad safety and target-specificity language should be interpreted within that scope."
+  ],
+  "output_compliance_status": "MODEL_REPORTED_SCHEMA_COMPLIANT"
+}
