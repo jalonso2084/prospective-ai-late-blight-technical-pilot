@@ -1,0 +1,142 @@
+{
+  "record_status_labels": [
+    "TECHNICAL_PILOT_ONLY",
+    "NOT_A_PROSPECTIVE_VALIDATION_RECORD"
+  ],
+  "evaluation_id": "SP-VF064-R1",
+  "version_family_id": "VF064",
+  "document_version_id": "DV01",
+  "ced_id": "CED-VF064-DV01-v1.0",
+  "ced_sha256": "738a5e716f3bc1995bc72c5704fb966dbf4abc92bc3a7b3aa7f80c1a969cec41",
+  "protocol_version": "1.0",
+  "rubric_version": "Pilot v0.2",
+  "prompt_version": "v0.2",
+  "evidence_language": "English",
+  "response_language": "English",
+  "model": {
+    "provider": "OpenAI",
+    "model_identifier": "GPT-5.6 Sol",
+    "model_version_or_snapshot": "NOT_EXPOSED_BY_UI",
+    "evaluation_timestamp_utc": "2026-11-15T00:16:50Z",
+    "provider_reported_knowledge_cutoff": null,
+    "knowledge_cutoff_source": "NOT_REPORTED",
+    "interface": "ChatGPT UI",
+    "reasoning_mode": "High",
+    "sampling_parameters": {
+      "ui_controlled": true,
+      "temperature": null
+    },
+    "input_delivery_condition_id": "AM01_UI_NATIVE_FILES_v1",
+    "provider_schema_adapter_version": "AM01_UI_CANONICAL_v1.0",
+    "browsing_state": "DISABLED",
+    "tool_access": "NONE"
+  },
+  "current_paper_assessments": {
+    "scientific_quality": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "The study presents a coherent investigation of cultivar-dependent potato microbiome responses to controlled foliar Phytophthora infestans infection, integrating bacterial community profiling across successive plant generations with isolate-based functional screening. Substantial rhizosphere shifts and differential inhibitory activity are supported by the reported results. However, the proposed contribution of recruited microbiota to host resistance remains hypothetical because differential microbial abundance was not associated with inhibitory activity and plant-level protection was not demonstrated (Abstract; Results; Discussion; Conclusion)."
+    },
+    "methodological_rigor": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "The design includes susceptible and tolerant cultivars, infected and untreated controls, successive plant generations, multiple plant compartments, biological replication, 16S rRNA amplicon sequencing, differential-abundance analyses with multiple-testing correction, and repeated spore-germination bioassays. The selection of 163 isolates provides a functional screening component. Important limitations include only two cultivars, greenhouse and growth-chamber conditions, reuse and dilution of soil between generations, incomplete representation of differentially abundant taxa among cultivable isolates, and the absence of direct validation of protective effects in whole plants or field conditions (Materials and methods; Results; Discussion)."
+    },
+    "strength_of_evidence": {
+      "assessment_status": "ASSESSED",
+      "score": 2,
+      "rationale": "The evidence convincingly documents treatment-associated changes in bacterial community composition, including 192 differentially abundant ASVs in the first generation and 2191 in the second, with greater overall responsiveness in Bintje than Innovator. Isolates from Innovator also showed modestly greater spore-germination inhibition. Nevertheless, the study found no correlation between infection-associated abundance changes and isolate inhibitory activity. It therefore supports microbiome responses and candidate antagonistic activity more strongly than the proposed recruitment of protective organisms or their contribution to cultivar resistance (Results, Figures 3 and 5; Discussion; Conclusion)."
+    },
+    "perceived_novelty": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "The study applies the cry-for-help hypothesis to foliar late-blight infection in potato, examines cultivar-specific microbial responses across successive plant generations, and links microbiome sequence analysis to screening of corresponding bacterial isolates. The reported inhibitory activity of Advenella, Nocardioides, and Phyllobacterium strains adds potentially novel biological evidence. The general concept of pathogen-induced microbiome restructuring is established in the paper's cited scientific context, so the advance is substantive but not a fundamentally new conceptual framework (Background; Results; Discussion)."
+    }
+  },
+  "future_outcome_forecasts": {
+    "scientific_recognition_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.55,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The study reports substantial cultivar-specific rhizosphere responses to foliar P. infestans infection across two successive plant generations (Abstract; Results).",
+        "The integration of microbiome profiling with screening of 163 bacterial isolates offers identifiable findings and candidate organisms for independent investigation (Materials and methods; Results).",
+        "The authors identify unresolved questions concerning microbial recruitment, protective mechanisms, and whole-plant validation that could motivate subsequent research (Discussion; Conclusion)."
+      ],
+      "main_uncertainty": "The supplied paper cannot establish whether independent researchers will pursue, substantively extend, validate, or challenge these findings within 36 months. The lack of a demonstrated connection between microbial recruitment and protection may reduce subsequent research interest.",
+      "ways_forecast_could_be_wrong": [
+        "Independent researchers may rapidly investigate the identified taxa or cultivar-specific microbiome responses, producing more substantive scientific follow-up than anticipated.",
+        "The absence of demonstrated in planta protection may limit substantive follow-up despite the microbiome findings.",
+        "Independent studies may prioritize different microbial mechanisms or experimental systems and therefore not substantively engage with this contribution."
+      ]
+    },
+    "epidemiological_consequence_36m": {
+      "forecastability": "CONSTRUCT_AMBIGUOUS",
+      "probability": null,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The study concerns potato interactions with P. infestans, but its primary outcomes are bacterial community composition and in vitro inhibition of pathogen spore germination (Abstract; Materials and methods; Results).",
+        "The study does not directly investigate pathogen population structure, fungicide resistance, epidemic spread, field disease risk, or forecasting performance.",
+        "The suggested contribution of microbiota to cultivar resistance remains unverified at the whole-plant level (Discussion; Conclusion)."
+      ],
+      "main_uncertainty": "It is unclear whether the reported microbiome responses could materially alter an independent assessment of host-pathogen relationships or forecasting-relevant epidemiology. The relationship between in vitro antagonism and field-level disease dynamics is not established.",
+      "ways_forecast_could_be_wrong": [
+        "Subsequent mechanistic experiments could demonstrate that the identified microbiota substantially alter host susceptibility and thereby influence epidemiological interpretation.",
+        "Independent technical studies might incorporate microbiome-mediated host resistance into disease-risk assessments.",
+        "The observed microbial changes may prove unrelated to effective protection or epidemiologically meaningful disease outcomes."
+      ]
+    },
+    "operational_uptake_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.12,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The study identifies bacterial strains with measurable in vitro inhibitory activity against P. infestans sporangia, including members of Advenella, Nocardioides, Phyllobacterium, and Pseudomonas (Results; Figure 5).",
+        "The research explicitly seeks candidate microbial biological control agents as alternatives to conventional late-blight control strategies (Background).",
+        "The authors state that further experiments involving whole plants are necessary to determine whether the identified strains can improve protection of susceptible cultivars (Discussion; Conclusion)."
+      ],
+      "main_uncertainty": "The evidence does not demonstrate reliable whole-plant protection, field efficacy, formulation feasibility, or integration into an operational disease-management system. These missing translational stages make explicit incorporation into an independent guideline or operational system within 36 months uncertain.",
+      "ways_forecast_could_be_wrong": [
+        "One or more identified strains could demonstrate strong efficacy in subsequent plant experiments and be incorporated rapidly into technical management recommendations.",
+        "Operational systems may adopt the microbiome-screening approach rather than any individual bacterial strain.",
+        "In vitro inhibitory activity may fail to translate into practical disease suppression, preventing operational incorporation.",
+        "Implementation requirements may extend beyond the 36-month horizon even if biological efficacy is subsequently confirmed."
+      ]
+    },
+    "translational_timing": {
+      "status": "TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE",
+      "time_bin": null,
+      "rationale": "The supplied evidence contains laboratory screening results but no demonstrated whole-plant efficacy, field validation, implementation pathway, or development milestones from which a defensible operational adoption interval could be estimated. Selecting a specific time bin would introduce unsupported temporal precision."
+    }
+  },
+  "concise_justification": {
+    "paper_evidence": [
+      "Controlled foliar infection produced strong bacterial community changes, particularly in the rhizosphere, with substantially more differentially abundant ASVs in the second generation than in the first (Results; Figure 3).",
+      "The susceptible cultivar Bintje exhibited more extensive infection-associated microbial changes than the more resistant cultivar Innovator (Results; Discussion).",
+      "The researchers isolated 636 bacterial strains and selected 163 corresponding to 57 ASVs for functional screening (Materials and methods; Results).",
+      "Several bacterial genera showed substantial in vitro sporangial-germination inhibition, while Pseudomonas was particularly effective against zoospore germination (Results; Figure 5).",
+      "The absence of a correlation between differential abundance and inhibitory activity limits evidence for targeted protective recruitment; the authors acknowledge the need for experiments involving intact plants (Discussion; Conclusion)."
+    ],
+    "main_uncertainty": "The central scientific uncertainty concerns whether infection-associated microbial restructuring constitutes functionally beneficial recruitment and whether candidate antagonistic bacteria can improve host resistance under biologically realistic conditions. Future recognition and operational adoption are additionally uncertain because the supplied evidence does not describe subsequent independent scientific or implementation activity.",
+    "ways_forecast_could_be_wrong": [
+      "Microbial community changes could reflect mechanisms unrelated to protective recruitment.",
+      "Cultivar-specific differences could depend strongly on the selected genotypes, soil conditions, or experimental environment.",
+      "Bacterial interactions or host-mediated resistance mechanisms not captured by isolated-strain assays could reveal stronger protective effects than the present experiments indicate.",
+      "Further experimental work might establish practical biological control applications more rapidly than expected.",
+      "The findings may remain scientifically informative without producing substantive independent follow-up or operational incorporation within 36 months."
+    ]
+  },
+  "limitations": [
+    "Only two potato cultivars were examined, limiting generalization of genotype-dependent microbiome responses.",
+    "The experiments were conducted under controlled greenhouse and growth-chamber conditions rather than natural field disease pressure.",
+    "Successive generations involved soil transfer and mixing with fresh substrate, complicating attribution of amplified community changes exclusively to plant-mediated recruitment.",
+    "Root exudates were not characterized, so the proposed mechanism of microbial recruitment was not directly demonstrated.",
+    "Cultivation-dependent isolate selection represented only a subset of the differentially abundant bacterial taxa, leaving potentially important organisms untested.",
+    "In vitro spore-germination inhibition does not establish suppression of disease in intact plants or field conditions.",
+    "The absence of a demonstrated relationship between microbial abundance changes and inhibitory activity weakens the functional interpretation of infection-associated microbiome restructuring.",
+    "The contribution of bacterial communities to the observed difference in cultivar resistance remains a hypothesis rather than a demonstrated causal mechanism.",
+    "The supplied evidence does not establish a pathway or schedule for independent scientific recognition, epidemiological incorporation, or operational uptake.",
+    "Forecast probabilities are subjective evidence-based estimates and are not empirically calibrated."
+  ],
+  "output_compliance_status": "MODEL_REPORTED_SCHEMA_COMPLIANT"
+}
