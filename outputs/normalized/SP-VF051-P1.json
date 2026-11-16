@@ -1,0 +1,133 @@
+{
+  "record_status_labels": [
+    "TECHNICAL_PILOT_ONLY",
+    "NOT_A_PROSPECTIVE_VALIDATION_RECORD"
+  ],
+  "evaluation_id": "SP-VF051-P1",
+  "version_family_id": "VF051",
+  "document_version_id": "DV01",
+  "ced_id": "CED-VF051-DV01-v1.2",
+  "ced_sha256": "dc8c240477af2e0558308e801c12f2d32670e57a88065c420bf4a7644c1f856f",
+  "protocol_version": "1.0",
+  "rubric_version": "Pilot v0.2",
+  "prompt_version": "v0.2",
+  "evidence_language": "English",
+  "response_language": "English",
+  "model": {
+    "provider": "OpenAI",
+    "model_identifier": "GPT-5.6 Sol",
+    "model_version_or_snapshot": "NOT_EXPOSED_BY_UI",
+    "evaluation_timestamp_utc": "2026-11-13T01:54:04Z",
+    "provider_reported_knowledge_cutoff": null,
+    "knowledge_cutoff_source": "NOT_REPORTED",
+    "interface": "ChatGPT UI",
+    "reasoning_mode": "High",
+    "sampling_parameters": {
+      "ui_controlled": true,
+      "temperature": null
+    },
+    "input_delivery_condition_id": "AM01_UI_NATIVE_FILES_v1",
+    "provider_schema_adapter_version": "AM01_UI_CANONICAL_v1.0",
+    "browsing_state": "DISABLED",
+    "tool_access": "NONE"
+  },
+  "current_paper_assessments": {
+    "scientific_quality": {
+      "assessment_status": "ASSESSED",
+      "score": 1,
+      "rationale": "The paper addresses an important problem and presents an integrated computational workflow, but major conceptual and inferential problems undermine its central claims. The analyzed identifiers and interpretations concern potato host-response genes, whereas the title and repeated claims frame them as Phytophthora infestans pathogenicity genes; the unit of analysis is internally unclear, and no functional experiments validate the claimed pathogenicity or resistance roles (Sections 2.1, 2.4, 3.2, and 4.5-4.6)."
+    },
+    "methodological_rigor": {
+      "assessment_status": "ASSESSED",
+      "score": 1,
+      "rationale": "The study reports only three time points and 18 samples, but converts genes into learning instances and shows a test confusion matrix containing roughly 1,565 instances without demonstrating sample-grouped splitting; the 4:1:1 split and repeated cross-validation therefore leave serious leakage and pseudoreplication risk. Model inputs and tensor dimensions are not reproducibly specified, the attention-ranking formula averages attention over destinations despite describing received importance, and key tuning constants and complete ablation results are not reported (Sections 2.2-2.4; Figures 5-6; Table 1)."
+    },
+    "strength_of_evidence": {
+      "assessment_status": "ASSESSED",
+      "score": 1,
+      "rationale": "Classification performance, attention ranking, annotation overlap, literature matching, and enrichment are all in silico and partly reuse infection-responsive expression information; they do not establish that ranked genes cause pathogenicity, susceptibility, or resistance. The rice analysis reports training/validation curves rather than an independent functional validation, and the paper acknowledges the absence of knockout, overexpression, RT-qPCR, or challenge assays (Sections 3.1-3.2 and 4.5-4.6)."
+    },
+    "perceived_novelty": {
+      "assessment_status": "ASSESSED",
+      "score": 3,
+      "rationale": "Within the paper's stated context, the gene-centered temporal reconstruction, Bi-LSTM-derived embeddings, serial local/global attention, cross-sample stability adjustment, and gene prioritization form a substantively novel integrated application to potato late-blight transcriptomics. The components themselves are adaptations of established LSTM, Transformer, attention, and enrichment approaches, so the evidence does not support an unusually distinctive score of 4 (Introduction; Sections 2.2-2.4)."
+    }
+  },
+  "future_outcome_forecasts": {
+    "scientific_recognition_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.22,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The paper combines temporal modeling, hybrid attention, and gene ranking for an agriculturally important disease and reports a cross-species application to rice blast (Abstract; Sections 3.1 and 5).",
+        "It states that processed data, source code, model weights, and scripts are publicly available, which could facilitate independent testing (Data Availability Statement).",
+        "Major ambiguities in splitting, units of analysis, attention scoring, and biological target identity may deter or invalidate substantive follow-on work (Sections 2.2-2.4 and 3.2)."
+      ],
+      "main_uncertainty": "The supplied evidence cannot show whether independent researchers will find the method sufficiently reproducible and credible to build on, validate, challenge, or extend it within 36 months.",
+      "ways_forecast_could_be_wrong": [
+        "Accessible code and the practical importance of late blight could generate rapid independent replication or methodological extensions, making recognition more likely.",
+        "Replication could reveal leakage or non-informative attention rankings, sharply reducing substantive follow-on work.",
+        "Independent wet-lab confirmation of one or more top-ranked genes could increase recognition despite the present methodological weaknesses."
+      ]
+    },
+    "epidemiological_consequence_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.06,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The contribution prioritizes potato host genes associated with infection-response pathways and therefore could, after validation, affect interpretation of host-pathogen relationships (Sections 3.2 and 4.1-4.2).",
+        "Approximately 55% of the 200 candidates are described as lacking prior potato disease annotations, creating possible targets for new mechanistic work (Section 3.2.4).",
+        "The study does not analyze pathogen populations, fungicide resistance, field spread, or disease forecasting, and it provides no causal validation of the host-gene candidates (Sections 4.5-4.6)."
+      ],
+      "main_uncertainty": "A consequence requires independent validation and explicit use of the contribution to change a scientific or technical characterization of late-blight host-pathogen relationships; the paper supplies no evidence that this translation will occur.",
+      "ways_forecast_could_be_wrong": [
+        "Validated novel candidates could produce a mechanistic reinterpretation of potato-P. infestans interactions within the horizon, making the probability too low.",
+        "If the ranking is driven by leakage, generic stress responses, or invalid attention aggregation, even the low forecast may be too high.",
+        "An independent source could use the method on another epidemiologically relevant dataset more quickly than the potato candidates themselves are validated."
+      ]
+    },
+    "operational_uptake_36m": {
+      "forecastability": "FORECASTABLE",
+      "probability": 0.04,
+      "epistemic_uncertainty": "HIGH",
+      "supporting_evidence": [
+        "The paper proposes candidate genes for breeding, engineering, marker-assisted selection, and possible early diagnostic markers (Section 4.3).",
+        "The workflow is presented as reusable and the paper states that code, weights, and processed data are publicly available (Section 5; Data Availability Statement).",
+        "No candidate is functionally validated, no breeding or field-management system is tested, environmental covariates are absent, and the authors explicitly describe the work as computational prioritization (Sections 4.5-4.6)."
+      ],
+      "main_uncertainty": "There is a large unmeasured gap between computational prioritization and explicit incorporation into an independent breeding, surveillance, diagnostic, resistance-management, extension, or field-management system.",
+      "ways_forecast_could_be_wrong": [
+        "A breeding or diagnostic group could rapidly test and incorporate a candidate or the open workflow, making uptake higher than forecast.",
+        "Reproducibility problems or failure of functional validation could prevent any uptake.",
+        "The reported patent could facilitate organized development, but the supplied document does not establish an uptake pathway or implementation partner."
+      ]
+    },
+    "translational_timing": {
+      "status": "TIMING_NOT_METHODOLOGICALLY_DEFENSIBLE",
+      "time_bin": null,
+      "rationale": "The paper provides no development milestones, external validation, implementation partner, or adoption pathway from which to distinguish 0-12, 13-24, 25-36, or longer timing without forced precision."
+    }
+  },
+  "concise_justification": {
+    "paper_evidence": [
+      "The primary dataset is described as 32,917 genes from 18 samples across only three infection time points, while the model treats genes as learning instances (Abstract; Sections 2.1-2.2).",
+      "The proposed LSTM-Transformer reaches about 0.85 accuracy and 0.92 AUC-ROC in repeated cross-validation and outperforms the reported baselines, but the split is not shown to be grouped by biological sample (Table 1; Figures 5-6).",
+      "The 200 ranked candidates show defense-related annotations, temporal clusters, enrichment, and overlap with known response-gene families, but these are in silico coherence checks rather than causal tests (Section 3.2).",
+      "The manuscript explicitly states that experimental validation is absent and that three time points and missing environmental metadata constrain inference (Sections 4.5-4.6).",
+      "Public availability of processed data, source code, weights, and scripts may support reproducibility and follow-on work (Data Availability Statement)."
+    ],
+    "main_uncertainty": "The central unresolved issue is whether the reported predictive performance and gene ranking remain valid under a clearly defined, biological-sample-grouped evaluation and whether any candidates survive independent functional testing.",
+    "ways_forecast_could_be_wrong": [
+      "A leakage-free reanalysis could reproduce the performance and ranking, making the present assessment too skeptical.",
+      "The attention aggregation and gene-level splitting could invalidate both performance and candidate ranking, making even the low downstream forecasts too optimistic.",
+      "Rapid wet-lab validation of a novel candidate could substantially increase recognition, epidemiological consequence, and operational interest.",
+      "The practical importance of late blight and availability of code could produce methodological adoption even if the biological claims remain weak."
+    ]
+  },
+  "limitations": [
+    "The evaluation is restricted to the supplied CED; datasets, source code, model weights, citations, patent claims, and reference accuracy were not externally verified.",
+    "Ambiguous descriptions of sample counts, tensor construction, splitting, attention direction, and validation prevent exact reconstruction of the analysis from the document alone.",
+    "Forecast probabilities are judgmental forecasts from one supplied manuscript and are not calibrated frequencies or observations of later outcomes."
+  ],
+  "output_compliance_status": "MODEL_REPORTED_SCHEMA_COMPLIANT"
+}
