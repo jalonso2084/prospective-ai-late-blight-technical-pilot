@@ -1,0 +1,17 @@
+version_family_id,dimension,primary_score,retest_score,absolute_difference,primary_raw_recovered,retest_raw_recovered
+VF038,scientific_quality,2,2,0,True,True
+VF038,methodological_rigor,2,2,0,True,True
+VF038,strength_of_evidence,2,2,0,True,True
+VF038,perceived_novelty,2,2,0,True,True
+VF051,scientific_quality,1,2,1,True,True
+VF051,methodological_rigor,1,1,0,True,True
+VF051,strength_of_evidence,1,2,1,True,True
+VF051,perceived_novelty,3,2,1,True,True
+VF064,scientific_quality,3,3,0,False,True
+VF064,methodological_rigor,3,3,0,False,True
+VF064,strength_of_evidence,3,2,1,False,True
+VF064,perceived_novelty,3,3,0,False,True
+VF073,scientific_quality,2,3,1,False,True
+VF073,methodological_rigor,2,2,0,False,True
+VF073,strength_of_evidence,2,2,0,False,True
+VF073,perceived_novelty,3,3,0,False,True
