@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use these technical-pilot materials, please cite this repository."
+title: "Prospective AI Evaluation of Potato Late Blight Research: Technical Pilot Reproducibility Package"
+version: "0.9-publication-candidate"
+date-released: 2026-11-16
+authors:
+  - family-names: "Alonso"
+    given-names: "Jorge Luis"
+repository-code: "https://github.com/jalonso2084/prospective-ai-late-blight-technical-pilot"
+license: CC-BY-4.0
+keywords:
+  - artificial intelligence
+  - scientific evaluation
+  - prospective study
+  - potato late blight
+  - Phytophthora infestans
+  - reproducibility
